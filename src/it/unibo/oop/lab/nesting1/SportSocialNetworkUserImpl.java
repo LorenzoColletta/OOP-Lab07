@@ -1,4 +1,4 @@
-/**
+                                                                                                                                                                                                                                                                     /**
  * 
  */
 package it.unibo.oop.lab.nesting1;
@@ -136,7 +136,17 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * with its bare name.
      */
     public static final class Sport {
-        /*
+        private final String name;
+        
+        public Sport(final String name) {
+        	this.name = name;
+        }
+        
+        public String getName() {
+        	return this.name;
+        }
+        
+    	/*
          * TODO
          * 
          * Redefine equals so that two sports are equal only if they feature the
@@ -144,7 +154,15 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
          */
         @Override
         public boolean equals(final Object o) {
-            return false;
+        	if(o != null && o.getClass().equals(this.getClass())) {
+                return name.equals((String)o);
+        	}
+        	return false;
         }
+        
+        public int hashCode() {
+        	return name.hashCode();
+        }
+        
     }
 }
