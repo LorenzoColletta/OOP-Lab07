@@ -87,7 +87,7 @@ public final class TestAnonymousComparator {
         		return 0;
         	}
         });
-        // TODO
+
         /*
          * expected Result
          */
@@ -118,7 +118,18 @@ public final class TestAnonymousComparator {
          * NOTE: in order to sort a list think about a method of the utility
          * class Collections
          */
-        // TODO
+        Collections.sort(rossiUsers, new Comparator<User>(){
+        	public int compare(User first, User second) {
+        		if(first.getAge() > second.getAge()) {
+            		return -1;        			
+        		}
+        		if(first.getAge() < second.getAge()){
+        			return 1;
+        		}
+        		return 0;
+        	}
+        });
+        
         /*
          * expected Result
          */
