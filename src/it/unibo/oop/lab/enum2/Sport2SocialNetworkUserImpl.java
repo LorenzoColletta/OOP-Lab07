@@ -112,7 +112,8 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      * @return the set of individual sport this user practices/follows
      */
     public Set<Sport> getIndividualSports() {
-    	Set<Sport> individualSports = Set.copyOf(this.sports);
+    	Set<Sport> individualSports = new HashSet<>();
+    	individualSports.addAll(this.sports);
     	Iterator<Sport> itRemove = individualSports.iterator();
     	
     	while(itRemove.hasNext()) {
@@ -131,7 +132,8 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      * @return the set of sport practiced in a given place
      */
     public Set<Sport> getSportPracticedInPlace(Place p) {
-    	Set<Sport> individualSports = Set.copyOf(this.sports);
+    	Set<Sport> individualSports = new HashSet<>();
+    	individualSports.addAll(this.sports);
     	Iterator<Sport> itRemove = individualSports.iterator();
     	
     	while(itRemove.hasNext()) {
